@@ -79,6 +79,7 @@
     <!-- http://nemo.ufes.br/hcion-extract#creates -->
 
     <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#creates">
+        <owl:inverseOf rdf:resource="http://nemo.ufes.br/hcion-extract#is_created_by"/>
         <rdfs:domain rdf:resource="http://nemo.ufes.br/hcion-extract#HCIEvaluation"/>
         <rdfs:range rdf:resource="http://nemo.ufes.br/hcion-extract#HCIEvaluationReport"/>
     </owl:ObjectProperty>
@@ -101,6 +102,14 @@
         <owl:inverseOf rdf:resource="http://nemo.ufes.br/hcion-extract#participation_of"/>
         <rdfs:domain rdf:resource="http://nemo.ufes.br/hcion-extract#UserParticipation"/>
         <rdfs:range rdf:resource="http://nemo.ufes.br/hcion-extract#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://nemo.ufes.br/hcion-extract#has_participation_in -->
+
+    <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#has_participation_in">
+        <owl:inverseOf rdf:resource="http://nemo.ufes.br/hcion-extract#participates_in"/>
     </owl:ObjectProperty>
     
 
@@ -132,6 +141,12 @@
     
 
 
+    <!-- http://nemo.ufes.br/hcion-extract#is_created_by -->
+
+    <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#is_created_by"/>
+    
+
+
     <!-- http://nemo.ufes.br/hcion-extract#is_evaluated_by -->
 
     <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#is_evaluated_by">
@@ -151,12 +166,36 @@
     
 
 
+    <!-- http://nemo.ufes.br/hcion-extract#is_performed_by -->
+
+    <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#is_performed_by">
+        <owl:inverseOf rdf:resource="http://nemo.ufes.br/hcion-extract#performs"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://nemo.ufes.br/hcion-extract#is_quantified_by -->
 
     <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#is_quantified_by">
         <owl:inverseOf rdf:resource="http://nemo.ufes.br/hcion-extract#used_to_quantify"/>
         <rdfs:domain rdf:resource="http://nemo.ufes.br/hcion-extract#UserParticipation"/>
         <rdfs:range rdf:resource="http://nemo.ufes.br/hcion-extract#Measure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://nemo.ufes.br/hcion-extract#is_reported_by -->
+
+    <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#is_reported_by">
+        <owl:inverseOf rdf:resource="http://nemo.ufes.br/hcion-extract#reports"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://nemo.ufes.br/hcion-extract#is_responsibility_of -->
+
+    <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#is_responsibility_of">
+        <owl:inverseOf rdf:resource="http://nemo.ufes.br/hcion-extract#responsible_for"/>
     </owl:ObjectProperty>
     
 
