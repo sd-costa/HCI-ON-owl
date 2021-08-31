@@ -173,7 +173,6 @@
     <!-- http://nemo.ufes.br/hcion-extract#participates_in -->
 
     <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#participates_in">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nemo.ufes.br/hcion-extract#User"/>
         <rdfs:range rdf:resource="http://nemo.ufes.br/hcion-extract#HCIEvaluation"/>
     </owl:ObjectProperty>
@@ -192,7 +191,6 @@
     <!-- http://nemo.ufes.br/hcion-extract#performs -->
 
     <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#performs">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nemo.ufes.br/hcion-extract#HCIEvaluator"/>
         <rdfs:range rdf:resource="http://nemo.ufes.br/hcion-extract#HCIEvaluation"/>
     </owl:ObjectProperty>
@@ -211,7 +209,6 @@
     <!-- http://nemo.ufes.br/hcion-extract#responsible_for -->
 
     <owl:ObjectProperty rdf:about="http://nemo.ufes.br/hcion-extract#responsible_for">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nemo.ufes.br/hcion-extract#HCIEvaluator"/>
         <rdfs:range rdf:resource="http://nemo.ufes.br/hcion-extract#HCIEvaluationReport"/>
     </owl:ObjectProperty>
