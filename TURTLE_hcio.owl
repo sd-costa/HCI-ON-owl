@@ -1,0 +1,707 @@
+@prefix : <https://nemo.inf.ufes.br/HCIO/hcio#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix hcio: <https://nemo.inf.ufes.br/HCIO/hcio#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://nemo.inf.ufes.br/HCIO/hcio> .
+
+<https://nemo.inf.ufes.br/HCIO/hcio> rdf:type owl:Ontology ;
+                                      rdfs:label "HCIO"@en ;
+                                      owl:versionInfo "1.2"@en ;
+                                      hcio:creator "Simone Dornelas Costa, Ricardo de Almeida Falbo, Monalessa Perini Barcellos"@en ;
+                                      hcio:description "The purpose of the Human-Computer Interaction Ontology (HCIO) is to establish an explicit and shared conceptualization about the HCI phenomenon, describing the main concepts involved in this phenomenon. HCIO is grounded in UFO and reuses concepts from the core System and Software Ontology (SysSwO). Given that a human-computer interaction involves communication between user and interactive computer system, HCIO is composed of sub-ontologies to deal with the interaction participants and with the interaction itself. The Interactive Computer System sub-ontology addresses what an interactive computer system is and its elements, including the user interface. The User sub-ontology focuses on the user and its possible actions when interacting with an interactive computer system. Finally, the HC Interaction sub-ontology links concepts from the other two sub-ontologies to define what a human-computer interaction is. HCIO is a core reference ontology about HCI phenomenon."@en ;
+                                      hcio:title "Human-Computer Interaction Ontology - HCIO"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#SysSwO
+hcio:SysSwO rdf:type owl:AnnotationProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#UFO
+hcio:UFO rdf:type owl:AnnotationProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#creator
+hcio:creator rdf:type owl:AnnotationProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#description
+hcio:description rdf:type owl:AnnotationProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#title
+hcio:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#bringsAbout
+hcio:bringsAbout rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#causedBy
+hcio:causedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#causes
+hcio:causes rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:TransitiveProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#composedOf
+hcio:composedOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:SymmetricProperty ,
+                         owl:ReflexiveProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#connects
+hcio:connects rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#constitutedOf
+hcio:constitutedOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#directlyCauses
+hcio:directlyCauses rdf:type owl:ObjectProperty ,
+                             owl:TransitiveProperty ,
+                             owl:ReflexiveProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#executionOf
+hcio:executionOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#handles
+hcio:handles rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#has
+hcio:has rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#includes
+hcio:includes rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#inheresIn
+hcio:inheresIn rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#interprets
+hcio:interprets rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#isDoneUsing
+hcio:isDoneUsing rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#materializationOf
+hcio:materializationOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#mayEvaluateAchievementOf
+hcio:mayEvaluateAchievementOf rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#participationOf
+hcio:participationOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdf:type owl:TransitiveProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#presents
+hcio:presents rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#propositionalContentOf
+hcio:propositionalContentOf rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#supports
+hcio:supports rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#triggers
+hcio:triggers rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:FunctionalProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Atomic_User_Participation
+hcio:Atomic_User_Participation rdf:type owl:Class ;
+                               rdfs:subClassOf hcio:User_Participation ;
+                               owl:disjointWith hcio:Complex_User_Participation ;
+                               rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                               hcio:description "Single User Participation. E.g., user touching her finger to unlock her mobile phone by using her fingerprint; user clicking a button."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Complex_Interactive_Computer_System
+hcio:Complex_Interactive_Computer_System rdf:type owl:Class ;
+                                         rdfs:subClassOf hcio:Interactive_Computer_System ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty hcio:composedOf ;
+                                                           owl:someValuesFrom hcio:Interactive_Computer_System
+                                                         ] ;
+                                         rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                                         hcio:description "Interactive Computer System composed of others Interactive Computer System. E.g., IoT in a smart home."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Complex_User_Participation
+hcio:Complex_User_Participation rdf:type owl:Class ;
+                                rdfs:subClassOf hcio:User_Participation ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty hcio:composedOf ;
+                                                  owl:someValuesFrom hcio:User_Participation
+                                                ] ;
+                                rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                                hcio:description "Participation composed of two or more User Participations. E.g., user typing her password and then answering security questions to log in the e-mail system."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Computer_Machine
+hcio:Computer_Machine rdf:type owl:Class ;
+                      rdfs:subClassOf hcio:Hardware_Equipment ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty hcio:connects ;
+                                        owl:someValuesFrom hcio:Hardware_Equipment
+                                      ] ;
+                      rdfs:isDefinedBy "SysSwO"@en ;
+                      hcio:description "Hardware Equipment able to run programs, processing, transforming and storing data. E.g., a notebook, a desktop computer, a mobile phone, a smart watch."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Hardware_Equipment
+hcio:Hardware_Equipment rdf:type owl:Class ;
+                        rdfs:isDefinedBy "SysSwO"@en ;
+                        hcio:UFO "subtypeOf Object"@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Human-Computer_Interaction
+hcio:Human-Computer_Interaction rdf:type owl:Class ;
+                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                  owl:onProperty hcio:composedOf ;
+                                                  owl:someValuesFrom hcio:Interactive_Computer_System_Participation
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty hcio:composedOf ;
+                                                  owl:someValuesFrom hcio:User_Participation
+                                                ] ;
+                                rdfs:isDefinedBy "HCIO HC Interaction Sub-Ontology"@en ;
+                                hcio:UFO "subtypeOf Complex Action"@en ;
+                                hcio:description "An exchange of information (i.e., communication) between a User and an Interactive Computer System via the User Interface. E.g., user touching her finger to unlock her mobile phone by using her fingerprint and the mobile phone system showing a message informing that the fingerprint was not recognized; user entering a room, in a smart home, which automatically turns on the light."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#IO_Equipment
+hcio:IO_Equipment rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( hcio:Input_Equipment
+                                                             hcio:Output_Equipment
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                  hcio:description "Input and Output Equipment"@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Input_Equipment
+hcio:Input_Equipment rdf:type owl:Class ;
+                     rdfs:subClassOf hcio:Hardware_Equipment ;
+                     rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                     hcio:description "Hardware Equipment used to receive and transmit information or data from a User (input). E.g.: keyboard, mouse, sensors."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Intentional_User_Participation__User_Action
+hcio:Intentional_User_Participation__User_Action rdf:type owl:Class ;
+                                                 rdfs:subClassOf hcio:User_Participation ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty hcio:causedBy ;
+                                                                   owl:someValuesFrom hcio:User_Intention
+                                                                 ] ;
+                                                 owl:disjointWith hcio:Unintentional_User_Participation ;
+                                                 rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                                                 hcio:UFO "subtypeOf Action Contribution"@en ;
+                                                 hcio:description "User participation intentionally performed. E.g., user touching her finger to unlock her mobile phone by using her fingerprint; user clicking the send button to send an e-mail."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Interactive_Computer_System
+hcio:Interactive_Computer_System rdf:type owl:Class ;
+                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                   owl:onProperty hcio:composedOf ;
+                                                   owl:someValuesFrom hcio:Computer_Machine
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty hcio:composedOf ;
+                                                   owl:someValuesFrom hcio:Hardware_Equipment
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty hcio:composedOf ;
+                                                   owl:someValuesFrom hcio:User_Interface
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty hcio:has ;
+                                                   owl:someValuesFrom hcio:Loaded_Interactive_Software_System_Copy
+                                                 ] ;
+                                 rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                                 hcio:SysSwO "subtypeOf Computer System"@en ;
+                                 hcio:UFO "Computer System subtypeOf Object"@en ;
+                                 hcio:description "Computer System that combines User Interface, Computer Machine and Loaded Software System Copies, used to process, transform, store, display or transmit information or data by receiving input, and communicating output to Users. E.g., a desktop computer, its monitor, keyboard, mouse and software systems loaded in the computer (operational system, browser, text editor, etc.); smart watch; smart mobile phone."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Interactive_Computer_System_Participation
+hcio:Interactive_Computer_System_Participation rdf:type owl:Class ;
+                                               rdfs:isDefinedBy "HCIO HC Interaction Sub-Ontology"@en ;
+                                               hcio:UFO "subtypeOf Object Participation"@en ;
+                                               hcio:description "The participation of an Interactive Computer System in a Human-Computer Interaction. E.g., the participation of the mobile phone system in the human-computer interaction in which the user touches her finger to unlock her mobile phone by using her fingerprint and the mobile phone system shows a message informing that the fingerprint was not recognized; the participation of the smart watch in the human-computer interaction in which the user uses the smart watch to monitor her heart pulse."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Interactive_Software_System
+hcio:Interactive_Software_System rdf:type owl:Class ;
+                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                   owl:onProperty hcio:constitutedOf ;
+                                                   owl:someValuesFrom hcio:User_Interface_Program
+                                                 ] ;
+                                 rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                                 hcio:SysSwO """subtypeOf Software System
+Software System subtypeOf Software Item"""@en ;
+                                 hcio:UFO "Software Item subtypeOf Object"@en ;
+                                 hcio:description "Software system that includes, among other programs, User Interface Programs. E.g., a home banking system and its graphical programs that deals with user interface aspects."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Loaded_Interactive_Software_System_Copy
+hcio:Loaded_Interactive_Software_System_Copy rdf:type owl:Class ;
+                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                               owl:onProperty hcio:includes ;
+                                                               owl:someValuesFrom hcio:Loaded_User_Interface_Program_Copy
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty hcio:inheresIn ;
+                                                               owl:someValuesFrom hcio:Computer_Machine
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty hcio:materializationOf ;
+                                                               owl:someValuesFrom hcio:Interactive_Software_System
+                                                             ] ;
+                                             rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                                             hcio:SysSwO "subtypeOf Loaded Software System Copy"@en ;
+                                             hcio:UFO "Loaded Software System Copy subtypeOf Disposition"@en ;
+                                             hcio:description "Loaded Software System Copy that is the materialization of an Interactive Software System. E.g., the copy of the home banking system loaded in the computer of a certain user."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Loaded_User_Interface_Program_Copy
+hcio:Loaded_User_Interface_Program_Copy rdf:type owl:Class ;
+                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                          owl:onProperty hcio:handles ;
+                                                          owl:someValuesFrom hcio:User_Interface
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty hcio:inheresIn ;
+                                                          owl:someValuesFrom hcio:Computer_Machine
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty hcio:materializationOf ;
+                                                          owl:someValuesFrom hcio:User_Interface_Program
+                                                        ] ;
+                                        rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                                        hcio:SysSwO "subtypeOf Loaded Program Copy"@en ;
+                                        hcio:UFO "Loaded Program Copy subtypeOf Disposition"@en ;
+                                        hcio:description "Loaded Program Copy that is the materialization of a User Interface Program. E.g., the copy of the programs that deal with interface aspects of the home banking system loaded in the computer of a certain user."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Output_Equipment
+hcio:Output_Equipment rdf:type owl:Class ;
+                      rdfs:subClassOf hcio:Hardware_Equipment ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty hcio:presents ;
+                                        owl:someValuesFrom hcio:User_Observable_State
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty hcio:supports ;
+                                        owl:someValuesFrom hcio:User_Interpretation
+                                      ] ;
+                      rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                      hcio:description "Hardware Equipment used to transmit or display information or data, communicating output to Users. E. g.: Monitor, speaker, etc."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Program_Copy_Execution
+hcio:Program_Copy_Execution rdf:type owl:Class ;
+                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                              owl:onProperty hcio:bringsAbout ;
+                                              owl:someValuesFrom hcio:User_Observable_State
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty hcio:directlyCauses ;
+                                              owl:someValuesFrom hcio:Program_Copy_Execution
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty hcio:directlyCauses ;
+                                              owl:someValuesFrom hcio:User_Interpretation
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty hcio:executionOf ;
+                                              owl:someValuesFrom hcio:Loaded_User_Interface_Program_Copy
+                                            ] ;
+                            rdfs:isDefinedBy "SysSwO"@en ;
+                            hcio:UFO "subtypeOf Event"@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#Unintentional_User_Participation
+hcio:Unintentional_User_Participation rdf:type owl:Class ;
+                                      rdfs:subClassOf hcio:User_Participation ;
+                                      rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                                      hcio:description "User participation unintentionally performed. E.g., a user walking and unintentionally giving information about number of steps to a monitoring system loaded in her smart watch; user entering a room, in a smart home, which automatically turns on the light."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User
+hcio:User rdf:type owl:Class ;
+          owl:disjointWith hcio:User_Intention ;
+          rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+          hcio:UFO "subtypeOf Person"@en ;
+          hcio:description "A Person who interacts with (or is expected to interact with) an Interactive Computer System. E.g., a person who uses a home banking system, smart watch or smart mobile phone."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Goal
+hcio:User_Goal rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty hcio:propositionalContentOf ;
+                                 owl:someValuesFrom hcio:User_Intention
+                               ] ;
+               rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+               hcio:UFO "subtypeOf Goal"@en ;
+               hcio:description "The propositional content of something the User wants to achieve (User Intention). E.g., the goal of buying fly tickets to go on vacation."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Initiated_Action
+hcio:User_Initiated_Action rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( hcio:Intentional_User_Participation__User_Action
+                                                                      hcio:User_Initiated_Participation
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                           hcio:description "Intentional User Action of inputting data or information using an Input Equipment. E.g., user touching her finger to unlock her mobile phone by using her fingerprint; user clicking the send button to send an email."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Initiated_Participation
+hcio:User_Initiated_Participation rdf:type owl:Class ;
+                                  rdfs:subClassOf hcio:User_Participation ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty hcio:bringsAbout ;
+                                                    owl:someValuesFrom hcio:User_Input_Resulting_State
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty hcio:causes ;
+                                                    owl:someValuesFrom hcio:User_Interpretation
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty hcio:directlyCauses ;
+                                                    owl:someValuesFrom hcio:Program_Copy_Execution
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty hcio:isDoneUsing ;
+                                                    owl:someValuesFrom hcio:Input_Equipment
+                                                  ] ;
+                                  owl:disjointWith hcio:User_Interpretation ;
+                                  rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                                  hcio:description "Event in which a User inputs data or information using an Input Equipment. E.g., user touching her finger to unlock her mobile phone by using her fingerprint."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Input_Resulting_State
+hcio:User_Input_Resulting_State rdf:type owl:Class ;
+                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                  owl:onProperty hcio:triggers ;
+                                                  owl:someValuesFrom hcio:Program_Copy_Execution
+                                                ] ;
+                                rdfs:isDefinedBy "HCIO HC Interaction Sub-Ontology"@en ;
+                                hcio:UFO "subtypeOf Situation"@en ;
+                                hcio:description "A situation achieved as the result of User’s input (data or information) received by means of an Input Equipment. E.g., the user fingerprint captured by the mobile phone system; the button clicked."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Intention
+hcio:User_Intention rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty hcio:inheresIn ;
+                                      owl:someValuesFrom hcio:User
+                                    ] ;
+                    rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                    hcio:UFO "subtypeOf Intention"@en ;
+                    hcio:description "An Intention that inheres in a User, causing him to perform intentional user actions. E.g., the intention to travel on vacation."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Interface
+hcio:User_Interface rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty hcio:composedOf ;
+                                      owl:someValuesFrom hcio:Input_Equipment
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty hcio:composedOf ;
+                                      owl:someValuesFrom hcio:Output_Equipment
+                                    ] ;
+                    rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                    hcio:UFO "subtypeOf Object"@en ;
+                    hcio:description "All components of an interactive system (software or hardware) that provide information and controls for the user to accomplish specific tasks with the interactive system. E.g., mouse, keyboard, monitor, sensors and the software that handle them."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Interface_Program
+hcio:User_Interface_Program rdf:type owl:Class ;
+                            rdfs:isDefinedBy "HCIO Interactive Computer System Sub-Ontology"@en ;
+                            hcio:SysSwO """subtypeOf Program
+Program subtypeOf Software Item"""@en ;
+                            hcio:UFO "Software Item subtypeOf Object"@en ;
+                            hcio:description "Program that deals with aspects related to the User Interface. E.g., the program responsible for the graphical user interface of the component that captures the user fingerprint to unlock a mobile phone."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Interpretation
+hcio:User_Interpretation rdf:type owl:Class ;
+                         rdfs:subClassOf hcio:User_Participation ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty hcio:directlyCauses ;
+                                           owl:someValuesFrom hcio:User_Initiated_Participation
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty hcio:interprets ;
+                                           owl:someValuesFrom hcio:User_Observable_State
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty hcio:mayEvaluateAchievementOf ;
+                                           owl:someValuesFrom hcio:User_Goal
+                                         ] ;
+                         rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                         hcio:description "Event in which a User interprets the system output. E.g., user interpreting a message from the mobile phone system informing that the captured fingerprint was not recognized; user sensing her smart watch vibrate; user hearing the notification sound of new message."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Observable_State
+hcio:User_Observable_State rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty hcio:triggers ;
+                                             owl:someValuesFrom hcio:Program_Copy_Execution
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty hcio:triggers ;
+                                             owl:someValuesFrom hcio:User_Interpretation
+                                           ] ;
+                           rdfs:isDefinedBy "HCIO Interactive HC Interaction Sub-Ontology"@en ;
+                           hcio:SysSwO "subtypeOf Computing Resulting State"@en ;
+                           hcio:UFO "Computing Resulting State subtypeOf Situation"@en ;
+                           hcio:description "A situation (an Observable State) perceivable by Users, typically achieved as the result (output) of a Program Copy Execution, communicated or presented by an Output Equipment. E.g., a message shown in the mobile phone screen informing the user that the captured fingerprint was not recognized, smart watch vibrating; sounds emitted by the mobile phone."@en .
+
+
+###  https://nemo.inf.ufes.br/HCIO/hcio#User_Participation
+hcio:User_Participation rdf:type owl:Class ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty hcio:participationOf ;
+                                          owl:someValuesFrom hcio:User
+                                        ] ;
+                        rdfs:isDefinedBy "HCIO User Sub-Ontology"@en ;
+                        hcio:UFO "subtypeOf Action Contribution"@en ;
+                        hcio:description "Event in which the user participates in a Human-Computer Interaction. E.g., user walking and unintentionally giving information about number of steps to a monitoring system loaded in her smart watch; user touching her finger to unlock her mobile phone by using her fingerprint; user interpreting a message from the mobile phone system informing that the captured fingerprint was not recognized."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Computer_Machine
+                hcio:Input_Equipment
+                hcio:Output_Equipment
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Computer_Machine
+                hcio:User
+                hcio:User_Goal
+                hcio:User_Intention
+                hcio:User_Observable_State
+                hcio:User_Participation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Computer_Machine
+                hcio:User
+                hcio:User_Goal
+                hcio:User_Intention
+                hcio:User_Participation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Hardware_Equipment
+                hcio:Human-Computer_Interaction
+                hcio:Interactive_Computer_System
+                hcio:Interactive_Computer_System_Participation
+                hcio:Interactive_Software_System
+                hcio:Loaded_Interactive_Software_System_Copy
+                hcio:Loaded_User_Interface_Program_Copy
+                hcio:Program_Copy_Execution
+                hcio:User
+                hcio:User_Goal
+                hcio:User_Input_Resulting_State
+                hcio:User_Intention
+                hcio:User_Interface
+                hcio:User_Interface_Program
+                hcio:User_Observable_State
+                hcio:User_Participation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Hardware_Equipment
+                hcio:Human-Computer_Interaction
+                hcio:Interactive_Computer_System
+                hcio:Interactive_Computer_System_Participation
+                hcio:Interactive_Software_System
+                hcio:Loaded_Interactive_Software_System_Copy
+                hcio:Loaded_User_Interface_Program_Copy
+                hcio:User
+                hcio:User_Goal
+                hcio:User_Input_Resulting_State
+                hcio:User_Intention
+                hcio:User_Interface
+                hcio:User_Interface_Program
+                hcio:User_Observable_State
+                hcio:User_Participation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Hardware_Equipment
+                hcio:Interactive_Computer_System
+                hcio:Interactive_Computer_System_Participation
+                hcio:Interactive_Software_System
+                hcio:Loaded_Interactive_Software_System_Copy
+                hcio:Loaded_User_Interface_Program_Copy
+                hcio:User
+                hcio:User_Goal
+                hcio:User_Input_Resulting_State
+                hcio:User_Intention
+                hcio:User_Interface
+                hcio:User_Interface_Program
+                hcio:User_Observable_State
+                hcio:User_Participation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Hardware_Equipment
+                hcio:Interactive_Computer_System
+                hcio:Interactive_Software_System
+                hcio:Loaded_Interactive_Software_System_Copy
+                hcio:Loaded_User_Interface_Program_Copy
+                hcio:User
+                hcio:User_Goal
+                hcio:User_Input_Resulting_State
+                hcio:User_Intention
+                hcio:User_Interface
+                hcio:User_Interface_Program
+                hcio:User_Participation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Hardware_Equipment
+                hcio:Interactive_Computer_System
+                hcio:Interactive_Software_System
+                hcio:Loaded_Interactive_Software_System_Copy
+                hcio:Loaded_User_Interface_Program_Copy
+                hcio:User
+                hcio:User_Goal
+                hcio:User_Intention
+                hcio:User_Interface
+                hcio:User_Interface_Program
+                hcio:User_Observable_State
+                hcio:User_Participation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:Hardware_Equipment
+                hcio:User
+                hcio:User_Goal
+                hcio:User_Intention
+                hcio:User_Observable_State
+                hcio:User_Participation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:User
+                hcio:User_Goal
+                hcio:User_Initiated_Action
+                hcio:User_Intention
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:User
+                hcio:User_Goal
+                hcio:User_Intention
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( hcio:User
+                hcio:User_Goal
+                hcio:User_Intention
+                hcio:User_Participation
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
