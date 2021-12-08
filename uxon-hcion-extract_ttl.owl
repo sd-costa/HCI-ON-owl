@@ -1,0 +1,340 @@
+@prefix : <http://nemo.ufes.br/hcion-extract#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://nemo.ufes.br/hcion-extract> .
+
+<http://nemo.ufes.br/hcion-extract> rdf:type owl:Ontology ;
+                                     owl:versionIRI <http://nemo.ufes.br/hcion-extract/1.0> .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#time
+xsd:time rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://nemo.ufes.br/hcion-extract#applies
+:applies rdf:type owl:ObjectProperty ;
+         owl:inverseOf :is_applied_by ;
+         rdfs:domain :Measurement ;
+         rdfs:range :Measure .
+
+
+###  http://nemo.ufes.br/hcion-extract#composes
+:composes rdf:type owl:ObjectProperty ;
+          owl:inverseOf :is_composed_of ;
+          rdfs:domain :UserParticipation ;
+          rdfs:range :HumanComputerInteraction .
+
+
+###  http://nemo.ufes.br/hcion-extract#creates
+:creates rdf:type owl:ObjectProperty ;
+         owl:inverseOf :is_created_by ;
+         rdfs:domain :HCIEvaluation ;
+         rdfs:range :HCIEvaluationReport .
+
+
+###  http://nemo.ufes.br/hcion-extract#evaluates
+:evaluates rdf:type owl:ObjectProperty ;
+           owl:inverseOf :is_evaluated_by ;
+           rdfs:domain :HCIEvaluation ;
+           rdfs:range :HumanComputerInteraction .
+
+
+###  http://nemo.ufes.br/hcion-extract#has_participation
+:has_participation rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :participation_of ;
+                   rdfs:domain :UserParticipation ;
+                   rdfs:range :User .
+
+
+###  http://nemo.ufes.br/hcion-extract#has_participation_in
+:has_participation_in rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :participates_in .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_applied_by
+:is_applied_by rdf:type owl:ObjectProperty ;
+               rdfs:domain :Measure ;
+               rdfs:range :Measurement .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_composed_of
+:is_composed_of rdf:type owl:ObjectProperty ;
+                rdfs:domain :HumanComputerInteraction ;
+                rdfs:range :UserParticipation .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_created_by
+:is_created_by rdf:type owl:ObjectProperty .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_evaluated_by
+:is_evaluated_by rdf:type owl:ObjectProperty ;
+                 rdfs:domain :HumanComputerInteraction ;
+                 rdfs:range :HCIEvaluation .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_measured_by
+:is_measured_by rdf:type owl:ObjectProperty ;
+                owl:inverseOf :measures ;
+                rdfs:domain :UserParticipation ;
+                rdfs:range :Measurement .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_performed_by
+:is_performed_by rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :performs .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_quantified_by
+:is_quantified_by rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :used_to_quantify ;
+                  rdfs:domain :UserParticipation ;
+                  rdfs:range :Measure .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_reported_by
+:is_reported_by rdf:type owl:ObjectProperty ;
+                owl:inverseOf :reports .
+
+
+###  http://nemo.ufes.br/hcion-extract#is_responsibility_of
+:is_responsibility_of rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :responsible_for .
+
+
+###  http://nemo.ufes.br/hcion-extract#measures
+:measures rdf:type owl:ObjectProperty ;
+          rdfs:domain :Measurement ;
+          rdfs:range :UserParticipation .
+
+
+###  http://nemo.ufes.br/hcion-extract#participates_in
+:participates_in rdf:type owl:ObjectProperty ;
+                 rdfs:domain :User ;
+                 rdfs:range :HCIEvaluation .
+
+
+###  http://nemo.ufes.br/hcion-extract#participation_of
+:participation_of rdf:type owl:ObjectProperty ;
+                  rdfs:domain :User ;
+                  rdfs:range :UserParticipation .
+
+
+###  http://nemo.ufes.br/hcion-extract#performs
+:performs rdf:type owl:ObjectProperty ;
+          rdfs:domain :HCIEvaluator ;
+          rdfs:range :HCIEvaluation .
+
+
+###  http://nemo.ufes.br/hcion-extract#reports
+:reports rdf:type owl:ObjectProperty ;
+         rdfs:domain :HCIEvaluationReport ;
+         rdfs:range :Measurement .
+
+
+###  http://nemo.ufes.br/hcion-extract#responsible_for
+:responsible_for rdf:type owl:ObjectProperty ;
+                 rdfs:domain :HCIEvaluator ;
+                 rdfs:range :HCIEvaluationReport .
+
+
+###  http://nemo.ufes.br/hcion-extract#used_to_quantify
+:used_to_quantify rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Measure ;
+                  rdfs:range :UserParticipation .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://nemo.ufes.br/hcion-extract#hci_end_time
+:hci_end_time rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :HumanComputerInteraction ;
+              rdfs:range xsd:time .
+
+
+###  http://nemo.ufes.br/hcion-extract#hci_pduration
+:hci_pduration rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :HumanComputerInteraction ;
+               rdfs:range xsd:time .
+
+
+###  http://nemo.ufes.br/hcion-extract#hci_start_time
+:hci_start_time rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :HumanComputerInteraction ;
+                rdfs:range xsd:time .
+
+
+###  http://nemo.ufes.br/hcion-extract#hcie_report_hcievaluator_comment
+:hcie_report_hcievaluator_comment rdf:type owl:DatatypeProperty ,
+                                           owl:FunctionalProperty ;
+                                  rdfs:domain :HCIEvaluationReport ;
+                                  rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#hcievaluator_name
+:hcievaluator_name rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :HCIEvaluator ;
+                   rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#m_formula
+:m_formula rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Measure ;
+           rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#m_scale
+:m_scale rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Measure ;
+         rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#m_unit
+:m_unit rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Measure ;
+        rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#mt_measured_value
+:mt_measured_value rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :Measurement ;
+                   rdfs:range xsd:decimal .
+
+
+###  http://nemo.ufes.br/hcion-extract#up_geolocation_x
+:up_geolocation_x rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :UserParticipation ;
+                  rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#up_geolocation_y
+:up_geolocation_y rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :UserParticipation ;
+                  rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#up_geolocation_z
+:up_geolocation_z rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :UserParticipation ;
+                  rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#up_sound
+:up_sound rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :UserParticipation ;
+          rdfs:range xsd:integer .
+
+
+###  http://nemo.ufes.br/hcion-extract#up_timestamp
+:up_timestamp rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :UserParticipation ;
+              rdfs:range xsd:time .
+
+
+###  http://nemo.ufes.br/hcion-extract#up_type
+:up_type rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :UserParticipation ;
+         rdfs:range xsd:string .
+
+
+###  http://nemo.ufes.br/hcion-extract#user_id
+:user_id rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :User ;
+         rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://nemo.ufes.br/hcion-extract#HCIEvaluation
+:HCIEvaluation rdf:type owl:Class .
+
+
+###  http://nemo.ufes.br/hcion-extract#HCIEvaluationReport
+:HCIEvaluationReport rdf:type owl:Class .
+
+
+###  http://nemo.ufes.br/hcion-extract#HCIEvaluator
+:HCIEvaluator rdf:type owl:Class .
+
+
+###  http://nemo.ufes.br/hcion-extract#HumanComputerInteraction
+:HumanComputerInteraction rdf:type owl:Class .
+
+
+###  http://nemo.ufes.br/hcion-extract#Measure
+:Measure rdf:type owl:Class .
+
+
+###  http://nemo.ufes.br/hcion-extract#Measurement
+:Measurement rdf:type owl:Class .
+
+
+###  http://nemo.ufes.br/hcion-extract#User
+:User rdf:type owl:Class .
+
+
+###  http://nemo.ufes.br/hcion-extract#UserParticipation
+:UserParticipation rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HCIEvaluation
+                :HCIEvaluationReport
+                :HCIEvaluator
+                :HumanComputerInteraction
+                :Measure
+                :Measurement
+                :User
+                :UserParticipation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HumanComputerInteraction
+                :Measure
+                :Measurement
+                :User
+                :UserParticipation
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
