@@ -204,6 +204,13 @@ xsd:time rdf:type rdfs:Datatype .
            rdfs:range xsd:string .
 
 
+###  http://nemo.ufes.br/hcion-extract#m_measurable_element
+:m_measurable_element rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain :Measure ;
+                      rdfs:range xsd:string .
+
+
 ###  http://nemo.ufes.br/hcion-extract#m_scale
 :m_scale rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
